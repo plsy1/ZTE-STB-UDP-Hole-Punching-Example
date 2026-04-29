@@ -1,0 +1,101 @@
+DESCRIBE rtsp://119.180.21.9:1554/iptv/import/Tvod/iptv/001/001/ch12122514263996485740.rsc/72299_Uni.sdp?lvst=3&nodeid=node17082514355736&TSTVTimeLife=10800&userid=053506831630&userip=60.212.88.91&time=20260423134140.430+00&life=86400000&transferproviderid=001&ctype=01&sid=1056004724&purl=MTE5LjE4MC4yMS40OjU1NC9saXZlL2NoMTIxMjI1MTQyNjM5OTY0ODU3NDAuc2RwP21lZGlhaWQ9Y2gxMjEyMjUxNDI2Mzk5NjQ4NTc0MCZjdHlwZT0yJnByb2ZpbGVjb2RlPQ&domain=0&phycid=ch12122514263996485740&playtype=1&ifpricereqsnd=1&boid=001&authid=0&mediaid=ch12122514263996485740&urtm=0&agnt=MTE5LjE4MC4yMS40OjU1NA&sadr=MTE5LjE4MC4yMS45&iptvsessionid=6197056&cryptmode=0502&crypt=4D1227FA35D56BCB97DB384758EBF00E RTSP/1.0
+Accept: application/sdp
+x-NAT:192.168.137.22:58468
+Timeshift: 1
+x-BurstSize: 1048576
+CSeq: 1
+User-Agent: HMTL RTSP 1.0; CTC/2.0
+
+RTSP/1.0 200 OK
+Server: ZMSS_ChinaTelcom2.2
+CSeq: 1
+Cache-Control: no-cache
+Content-length: 424
+Date: Thu, 23 Apr 2026 13:41:40 GMT
+Expires: Thu, 23 Apr 2026 13:41:40 GMT
+Content-Type: application/sdp
+Content-Base: rtsp://119.180.21.9:1554/iptv/import/Tvod/iptv/001/001/ch12122514263996485740.rsc/72299_Uni.sdp/
+
+v=0
+o=- 2209339155 0 IN IP4 119.180.21.9
+s=enviviob31
+c=IN IP4 0.0.0.0
+b=AS:10025
+t=0 0
+a=x-ZMSSForceUnicast
+a=control:*
+a=x-zmssvbr:0
+a=x-ZMSSTimeShiftLift:10800
+a=x-ZMSSCCBitrate:10025
+a=x-ZMSSShmFile:ch12122514263996485740_001
+a=x-ZMSSProcessMode:1
+a=range:clock=20260423T104140.47Z-20260423T134140.47Z
+a=x-ZMSSCCStartTime:20250725T005633
+m=video 0 RTP/AVP 33
+a=rtpmap:33 MP2T/90000
+a=control:trackID=2
+
+SETUP rtsp://119.180.21.9:1554/iptv/import/Tvod/iptv/001/001/ch12122514263996485740.rsc/72299_Uni.sdp/trackID=2 RTSP/1.0
+Transport: MP2T/RTP/UDP;unicast;client_address=192.168.137.22;client_port=21114-21115;mode=PLAY
+x-NAT:192.168.137.22:58468
+CSeq: 2
+User-Agent: HMTL RTSP 1.0; CTC/2.0
+
+RTSP/1.0 200 OK
+Server: ZMSS_ChinaTelcom2.2
+CSeq: 2
+x-KeepAliveInterval: 60000
+Session: 9105523615335558758
+Date: Thu, 23 Apr 2026 13:41:40 GMT
+Expires: Thu, 23 Apr 2026 13:41:40 GMT
+Transport: MP2T/RTP/UDP;unicast;client_address=192.168.137.22;mode=PLAY;source=119.180.21.9;client_port=21114-21115;server_port=15210-15211
+
+PLAY rtsp://119.180.21.9:1554/iptv/import/Tvod/iptv/001/001/ch12122514263996485740.rsc/72299_Uni.sdp/ RTSP/1.0
+Range: clock=end-
+x-BurstSize: 1048576
+Scale: 1.0
+CSeq: 3
+User-Agent: HMTL RTSP 1.0; CTC/2.0
+Session: 9105523615335558758
+
+RTSP/1.0 200 OK
+Server: ZMSS_ChinaTelcom2.2
+CSeq: 3
+Session: 9105523615335558758
+Range: clock=20260423T134140.53Z-
+Scale: 1.0
+RTP-Info: url=rtsp://119.180.21.9:15210/iptv/import/Tvod/iptv/001/001/ch12122514263996485740.rsc/72299_Uni.sdp/trackID=2
+
+GET_PARAMETER rtsp://119.180.21.9:1554/iptv/import/Tvod/iptv/001/001/ch12122514263996485740.rsc/72299_Uni.sdp/ RTSP/1.0
+CSeq: 4
+User-Agent: HMTL RTSP 1.0; CTC/2.0
+Session: 9105523615335558758
+
+RTSP/1.0 200 OK
+Server: ZMSS_ChinaTelcom2.2
+CSeq: 4
+Session: 9105523615335558758
+
+GET_PARAMETER rtsp://119.180.21.9:1554/iptv/import/Tvod/iptv/001/001/ch12122514263996485740.rsc/72299_Uni.sdp/ RTSP/1.0
+CSeq: 5
+User-Agent: HMTL RTSP 1.0; CTC/2.0
+Session: 9105523615335558758
+
+RTSP/1.0 200 OK
+Server: ZMSS_ChinaTelcom2.2
+CSeq: 5
+Session: 9105523615335558758
+
+这里写的clientport是client_port=21114-21115;
+
+完了之后又给服务端通过62695端口 udp报文 发到 服务端 15210
+
+----
+# Packet 9 from /Users/y1/Desktop/联通iptv软终端/111.pcapng
+- 5237
+- 13.229687600
+- 192.168.1.41
+- 119.180.21.9
+- UDP
+- 126
+- 62695 → 15210 Len=84
